@@ -1,0 +1,51 @@
+input {
+    font-family: sans-serif;
+    color: red;
+}
+input.person {
+    color: blue;
+}
+input#first_name {
+    color: darkgreen;
+}
+div {
+    border-bottom: 1px solid gray;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form input {
+    background-color: lightgrey;
+}
+form div > input {
+    background-color: aqua;
+}
+
+label {
+    color: rgb(156,6,54);
+}
+.block {
+    border: 1px solid mediumblue;
+    background-color: cadetblue;
+    text-align: center;
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: "EuropeDemi", "Arial", "Tahoma", "Adobe Gothic Std B";
+    margin: 44px auto;
+    padding: 15px;
+}
+.inside {
+    float: right;
+    width: 150px;
+    padding: 10px;
+    background: antiquewhite;
+    margin: 30px;
+    border-radius: 25px;
+}
