@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_3</title>
+    <style>
+        div {
+            margin: 10px;
+        }
+        label {
+            border: 1px solid red;
+        }
+        .radio {
+            border: 1px solid black;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="task3.html" metod="get">
+        <div>
+             <input type="checkbox" id="id1">
+             <label for="id1">Это метка для чекбокса: нажмите на меня - чекбокс сменит галочку! </label>
+        </div>
+        <div>
+            <input type="checkbox" id="id2" checked>
+            <label for="id2" >Я отмечен по умолчанию! </label>
+        </div>
+        <div>
+            <input type="checkbox" id="id3" checked disabled>
+            <label for="id3" >Я disabled! </label>
+        </div>
+
+        <div class="radio">
+            <p>Это группа радиокнопок - только одна из них может быть отмечена!</p>
+              <div>
+                <input type="radio" id="radio1" name="radio1">
+                <label for="radio1">Это метка для радио</label>
+              </div>
+            <div>
+                <input type="radio" id="radio2" name="radio1">
+                <label for="radio2">Это метка для радио</label>
+            </div>
+        </div>
+        <div>
+            <button type="submit">Отправить на сервер</button>
+        </div>
+
+    </form>
+</body>
+</html>

@@ -1,51 +1,40 @@
-input {
-    font-family: sans-serif;
+.text
+{
+    width: 570px;
+}
+h1
+{
+    text-align: center;
     color: red;
 }
-input.person {
+h2
+{
+    color: green;
+    margin-top: 35px;
+}
+b
+{
+    font-size: 20px;
+    color: red;
+}
+i
+{
     color: blue;
-}
-input#first_name {
-    color: darkgreen;
-}
-div {
-    border-bottom: 1px solid gray;
-}
-
-form div {
-    margin-bottom: 15px;
-}
-
-form input {
-    background-color: lightgrey;
-}
-form div > input {
-    background-color: aqua;
-}
-
-label {
-    color: rgb(156,6,54);
-}
-.block {
-    border: 1px solid mediumblue;
-    background-color: cadetblue;
-    text-align: center;
-    width: 20%;
-    height: 40px;
-    line-height: 40px;
-    font-size: 25px;
     font-weight: bold;
-    text-decoration: underline;
-    font-style: italic;
-    font-family: "EuropeDemi", "Arial", "Tahoma", "Adobe Gothic Std B";
-    margin: 44px auto;
-    padding: 15px;
 }
-.inside {
-    float: right;
-    width: 150px;
-    padding: 10px;
-    background: antiquewhite;
-    margin: 30px;
-    border-radius: 25px;
+ol
+{
+    color: red;
+}
+.justify
+{
+    font-family: Arial;
+    text-align: justify;
+    line-height: 2;
+    font-size: 14px;
+}
+ul
+{
+    font-style: italic;
+    color: #924763;
 }
