@@ -1,40 +1,12 @@
-.text
-{
-    width: 570px;
+.product {
+    height: 200px;
 }
-h1
-{
-    text-align: center;
-    color: red;
+
+
+.product img {
+    max-height: 170px;
+
 }
-h2
-{
-    color: green;
-    margin-top: 35px;
-}
-b
-{
-    font-size: 20px;
-    color: red;
-}
-i
-{
-    color: blue;
-    font-weight: bold;
-}
-ol
-{
-    color: red;
-}
-.justify
-{
-    font-family: Arial;
-    text-align: justify;
-    line-height: 2;
-    font-size: 14px;
-}
-ul
-{
-    font-style: italic;
-    color: #924763;
+.price {
+    padding: 6px;
 }
