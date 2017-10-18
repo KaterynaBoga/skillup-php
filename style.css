@@ -1,12 +1,9 @@
 .product {
     height: 200px;
 }
-
-
-.product img {
-    max-height: 170px;
-
+h2 {
+    margin-bottom: 30px;
 }
-.price {
-    padding: 6px;
+p {
+    float: left;
 }
