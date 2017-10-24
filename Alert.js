@@ -1,24 +1,34 @@
 'use strict';
-var c = 15;
-var d = 2;
-var result = c + d;
-alert(result);
 
-var a = 10, b = 2, c = 5;
-alert( a + b + c );
+var day,
+    dayIsCorrect = false;
 
-var a = 17, b = 10, c = a - b, d = 7;
-var result = c + d;
-alert ( result );
+function ask () {
+    var day;
 
-var str = 'Hello, World!';
-alert (str);
+    day = prompt('What day is today? (from 1 to 10)?');
 
-var a = "Hello, " + "World!";
-alert( a );
+    switch (day) {
+        case '1':
+            alert('the weekend was over');
+            break;
+        case '2':
+        case '3':
+        case '4':
+            alert('today to work');
+            break;
+        case '5':
+            alert('weekend is coming soon');
+            break;
+        case '6':
+        case '7':
+            alert('cheers, rest!');
+            break;
+        default:
+            alert('be more careful!');
+            ask();
+    }
+}
 
-var name = 'Kateryna';
-alert('Hello, ' + name);
-
-var age = 33;
-alert('I am ' + age + " years old");
+ask();
+alert('Wow, well done!!!');
