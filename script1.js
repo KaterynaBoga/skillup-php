@@ -15,3 +15,8 @@ var styles = ['Джаз', 'Блюз'];
     styles.unshift("Рэп", "Регги");
     alert(styles);
 
+var arr = ["Яблоко", "Апельсин", "Груша", "Лимон"];
+var max = arr.length - 1, min = 0;
+var rand = min + Math.floor(Math.random() * (max + 1 - min));
+alert(arr[rand]);
+
