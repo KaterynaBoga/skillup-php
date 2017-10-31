@@ -1,23 +1,52 @@
 'use strict';
 
-var op1 = document.getElementById('op1'),
-    op2 = document.getElementById('op2'),
-    result = document.getElementById('result'),
-    buttons = document.getElementsByTagName('button'),
-    i;
+$(document).ready(function () {
 
-function onClick(event) {
-    switch (event.target.innerHTML) {
-        case '+': result.innerHTML = parseFloat(op1.value) + parseFloat(op2.value); break;
-        case '-': result.innerHTML = parseFloat(op1.value) - parseFloat(op2.value); break;
-        case '*': result.innerHTML = parseFloat(op1.value) * parseFloat(op2.value); break;
-        case '/': result.innerHTML = parseFloat(op1.value) / parseFloat(op2.value); break;
+    var $op1 = $('#op1'),
+        $op2 = $ ('#op2'),
+        $result = $('#result');
+
+    function onClick() {
+        var op1 = parseFloat($op1.val()),
+            op2 = parseFloat($op2.val());
+        switch ($(this).html()) {
+            case '+': $result.html(op1 + op2); break;
+            case '-': $result.html(op1 - op2); break;
+            case '*': $result.html(op1 * op2); break;
+            case '/': $result.html(op1 / op2); break;
+        }
     }
-}
 
-for (i = 0; i < buttons.length; i++) {
-    buttons[i].onclick = onClick;
-}
+    $('button').click(onClick);
+
+    $('#slide').click(function () {
+        $('#panel').slideToggle();
+        $(this).toggleClass('active');
+    });
+
+    $('#hide').click(function() {
+        var $panel = $('#panel');
+
+        if ($panel.is(':visible')) {
+            $panel.animate({opacity: "hide"}, "slow");
+        } else {
+              $panel.animate({opacity: "show"}, "slow");
+    }
+    $(this).toggleClass('active');
+    });
+
+    $('#load').click(function(event){
+        event.preventDefault();
+        var target = $(this).attr('target'),
+            href = $(this).attr('href');
+
+//        $(target).load(href);
+
+    $.get(href, function (content) {
+        $(target).html(content);
+        });
+    });
+});
 
 
 
