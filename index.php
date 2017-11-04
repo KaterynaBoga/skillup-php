@@ -88,3 +88,92 @@ while ($u <= 100) {
     $u++;
 }
 echo $sum . PHP_EOL;
+
+$a = [2, 5, 9, 15, 0, 4];
+foreach ($a as $elem) {
+    if ($elem >= 3 && $elem <= 10) {
+        echo $elem . PHP_EOL;
+    }
+}
+
+$a = [-2, 5, 9, -15, 0, 4];
+$sum = 0;
+foreach ($a as $elem)
+if ($elem > 0) {
+    $sum += $elem;
+}
+echo $sum . PHP_EOL;
+
+$a = [1, 2, 5, 9, 4, 13, 4, 10];
+foreach ($a as $elem) {
+    if ($elem == 4) ;
+    {
+        echo 'have';
+        break;
+    }
+}
+
+$a = ['10', '20', '30', '50', '235', '3000'];
+foreach ($a as $elem) {
+    if ($elem[0] == '1' or $elem[0] == '2' or $elem[0] == '5')
+    {
+        echo $elem . PHP_EOL;
+    }
+}
+
+$a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+$str = '';
+foreach ($a as $elem) {
+    $str .= '-'.$elem;
+}
+echo $str.'-' . PHP_EOL;
+
+$w = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+foreach ($w as $key => $elem) {
+    if ($key == 5 || $key == 6) {
+        echo '<b>' .$elem. '</b>'. PHP_EOL;
+    }
+    else {
+        echo $elem . PHP_EOL;
+    }
+}
+
+$d = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+$day = 5;
+foreach ($d as $key => $elem) {
+    if ($key == $day) {
+        echo '<i>' .$elem. '</i>'. PHP_EOL;
+    }
+    else {
+        echo $elem . PHP_EOL;
+    }
+}
+
+$a = [];
+for ($i = 1; $i <= 100; $i++) {
+$a [] = $i;
+}
+var_dump($a);
+
+$arr = ['green'=>'зеленый', 'red'=>'красный', 'blue'=>'голубой'];
+foreach ($arr as $key=>$elem) {
+    $en[] = $key;
+    $ru[] = $elem;
+}
+var_dump($en);
+var_dump($ru);
+
+$num  = 1000;
+$result = 0;
+while ($num > 50) {
+    $num /= 2;
+    $result++;
+}
+    echo $result . PHP_EOL;
+    echo $num . PHP_EOL;
+
+$num  = 1000;
+$result = 0;
+for ($num = 1000, $result = 0; $num > 50; $num /= 2, $result++);
+echo $result . PHP_EOL;
+echo $num . PHP_EOL;
