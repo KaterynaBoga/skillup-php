@@ -1,179 +1,81 @@
 <?php
-$a = [];
-$a[1] = 'html';
-$a[2] = 'css';
-$a[3] = 'php';
-$a[4] = 'js';
-$a[5] = 'jq';
 
-foreach ($a as $value) {
-        echo $value . PHP_EOL;
-}
+    $sqrt = sqrt (1000);
+	$arr = [$sqrt, floor($sqrt), ceil($sqrt)];
+	echo $sqrt. PHP_EOL;
+    echo floor($sqrt) . PHP_EOL;
+    echo ceil($sqrt) . PHP_EOL;
 
-$a = [10, 20, 15, 17, 24, 35];
-$result = 0;
-foreach ($a as $elem) {
-    $result += $elem;
-}
-echo $result . PHP_EOL;
+    $a = 10;
+    $b = 3;
+    echo $a % $b . PHP_EOL;
 
-$w = 1;
-while ($w <= 100) {
-    echo $w;
-    $w++;
-}
-
-echo PHP_EOL;
-
-$s = 1;
-for ($s = 1; $s <= 100; $s++) {
-    echo $s;
-}
-
-echo PHP_EOL;
-
-$a = [1, 2, 3, 4, 5];
-$result = 0;
-foreach ($a as $elem) {
-    $result += $elem;
-}
-echo $result . PHP_EOL;
-
-$a = [1, 2, 3, 4, 5];
-$result = 0;
-foreach ($a as $elem) {
-    $result += $elem*$elem;
-}
-echo $result . PHP_EOL;
-
-$arr = ['green'=>'зеленый', 'red'=>'красный','blue'=>'голубой'];
-foreach ($arr as $key => $value) {
-    echo $key . '-' .$value . PHP_EOL;
-}
-
-$arr = ['Kolya' => '2000','Vasya' => '3000', 'Petya' => '4000' ];
-foreach ($arr as $key => $value) {
-    echo $key . ' - зарплата ' .$value.' долларов.'. PHP_EOL;
-}
-
-$w = 1;
-while ($w <= 10) {
-    echo $w . PHP_EOL;
-    $w++;
-}
-
-$s = 1;
-for ($s = 1; $s <= 9; $s++) {
-    echo $s . PHP_EOL;
-}
+    $arr = [4, 2, 5, 19, 13, 0, 10];
+    $sum = [];
 
 
 
-$r = 11;
-while ($r <= 33) {
-    echo $r . PHP_EOL;
-    $r++;
-}
+    $arr = [4, -2, 5, 19, -130, 0, 10];
+    echo max($arr) . PHP_EOL;
+    echo min($arr) . PHP_EOL;
 
-$t = 0;
-while ($t <= 10) {
-    echo $t . PHP_EOL;
-    $t += 2;
-}
+    $str = "html css php";
+    $res_str = explode(' ', $str);
+    print_r($res_str);
 
-$u = 1;
-$sum = 0;
-while ($u <= 100) {
-    $sum += $u;
-    $u++;
-}
-echo $sum . PHP_EOL;
+    $arr = ['a', 'b', 'c', 'd', 'e'];
+    $arr = array_map('strtoupper', $arr);
+    var_dump($arr);
 
-$a = [2, 5, 9, 15, 0, 4];
-foreach ($a as $elem) {
-    if ($elem >= 3 && $elem <= 10) {
-        echo $elem . PHP_EOL;
-    }
-}
+    $arr = [1, 2, 3, 4, 5];
+    $result = array_slice($arr, 1, 3);
+    var_dump($result);
 
-$a = [-2, 5, 9, -15, 0, 4];
-$sum = 0;
-foreach ($a as $elem)
-if ($elem > 0) {
-    $sum += $elem;
-}
-echo $sum . PHP_EOL;
+    $arr = [1, 2, 3, 4, 5];
+    array_splice($arr, 1, 2);
+    var_dump($arr);
 
-$a = [1, 2, 5, 9, 4, 13, 4, 10];
-foreach ($a as $elem) {
-    if ($elem == 4) ;
-    {
-        echo 'have';
-        break;
-    }
-}
+    $arr = [1, 2, 3, 4, 5];
+    array_splice($arr, 3, 0, ['a', 'b', 'c']);
+    var_dump($arr);
 
-$a = ['10', '20', '30', '50', '235', '3000'];
-foreach ($a as $elem) {
-    if ($elem[0] == '1' or $elem[0] == '2' or $elem[0] == '5')
-    {
-        echo $elem . PHP_EOL;
-    }
-}
-
-$a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-$str = '';
-foreach ($a as $elem) {
-    $str .= '-'.$elem;
-}
-echo $str.'-' . PHP_EOL;
-
-$w = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-foreach ($w as $key => $elem) {
-    if ($key == 5 || $key == 6) {
-        echo '<b>' .$elem. '</b>'. PHP_EOL;
-    }
-    else {
-        echo $elem . PHP_EOL;
-    }
-}
-
-$d = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-$day = 5;
-foreach ($d as $key => $elem) {
-    if ($key == $day) {
-        echo '<i>' .$elem. '</i>'. PHP_EOL;
-    }
-    else {
-        echo $elem . PHP_EOL;
-    }
-}
-
-$a = [];
-for ($i = 1; $i <= 100; $i++) {
-$a [] = $i;
-}
-var_dump($a);
-
-$arr = ['green'=>'зеленый', 'red'=>'красный', 'blue'=>'голубой'];
-foreach ($arr as $key=>$elem) {
-    $en[] = $key;
-    $ru[] = $elem;
-}
-var_dump($en);
-var_dump($ru);
-
-$num  = 1000;
-$result = 0;
-while ($num > 50) {
-    $num /= 2;
-    $result++;
-}
+    $arr = [2, 4, 6, 8, 5, -7];
+    $result = array_sum($arr)/count($arr);
     echo $result . PHP_EOL;
-    echo $num . PHP_EOL;
 
-$num  = 1000;
-$result = 0;
-for ($num = 1000, $result = 0; $num > 50; $num /= 2, $result++);
-echo $result . PHP_EOL;
-echo $num . PHP_EOL;
+    $arr = range(1, 100);
+    $result = array_sum($arr);
+    var_dump($result);
+
+    $arr = range(1, 100);
+    $str = implode('<br>', $arr);
+    echo $str . PHP_EOL;
+
+    $arr = array_fill(0, 10, 'x');
+    var_dump($arr);
+
+    $arr = range(1, 10);
+    shuffle($arr);
+    var_dump($arr);
+
+    $arr = range(1, 5);
+    $result = array_product($arr);
+    var_dump($result);
+
+    $str = 96;
+    $arr = str_split($str, 2);
+    $sum = array_sum($arr);
+    var_dump($sum);
+
+    $str = 'olleh';
+    $str = strrev($str);
+    $str = ucfirst($str);
+    $str = strrev($str);
+    echo $str . PHP_EOL;
+
+    $arr = [9, 16, 4];
+    $result = array_map('sqrt', $arr);
+    var_dump($result);
+
+    $arr = range(1, 26);
+
