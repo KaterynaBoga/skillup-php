@@ -77,5 +77,12 @@
     $result = array_map('sqrt', $arr);
     var_dump($result);
 
-    $arr = range(1, 26);
+    $keys = range ('a', 'z');
+    $elem = range(1, 26);
+    $arr = array_combine($keys, $elem);
+    var_dump($arr);
 
+    $str = 1234567890;
+    $arr = str_split($str, 2);
+    $sum = array_sum($arr);
+    echo $sum;
