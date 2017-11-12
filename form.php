@@ -22,6 +22,7 @@
             .error {
                 color: red;
                 font-size: 30px;
+                font-family: Arial;
             }
         </style>
     </head>
