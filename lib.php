@@ -1,6 +1,6 @@
 <?php
 
-define('USERS_FILE', __DIR__ . '/users.txt');
+define('USERS_FILE', __DIR__ . '/subscribers.txt.');
 
 function processRequest(array $user) {
     foreach ( $user as $field => $value) {
@@ -11,15 +11,8 @@ function processRequest(array $user) {
 
 function validateUser(array $user) {
     $errors = [];
-
-    if (!$user['confirm']) {
-        $errors[] = 'Вы должны принять условия!';
-    }
     if (!$user['email']) {
         $errors[] = 'Введите email!';
-    }
-    if ($user['phone'] && !is_numeric($user['phone'])) {
-        $errors[] = 'В номере телефона допускаются только цифры';
     }
     return $errors;
 }
