@@ -21,6 +21,7 @@
             }
             .error {
                 color: red;
+                font-size: 30px;
             }
         </style>
     </head>
