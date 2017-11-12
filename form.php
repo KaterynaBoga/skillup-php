@@ -24,6 +24,13 @@
                 font-size: 30px;
                 font-family: Arial;
             }
+            form {
+                font-family: Arial;
+                color: darkgreen;
+            }
+            h4 {
+                margin: 15px;
+            }
         </style>
     </head>
     <body>
@@ -32,7 +39,8 @@
 
     <?php } ?>
 
-        <form action="index.php" method="post">Форма подписки
+        <form action="index.php" method="post">
+            <h4>Форма подписки</h4>
             <label>Имя <input name="first_name" value="<?= $user['first_name'] ?>"></label>
             <label>Фамилия <input name="last_name" value="<?= $user['last_name'] ?>"></label>
             <label>E-mail <input type="email" name="email" name="email" value="<?= $user['email'] ?>"></label>
