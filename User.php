@@ -11,9 +11,9 @@ class Worker
 
     private $name = '';
 
-    private $age = '';
+    private $age = 0;
 
-    private $salary = '';
+    private $salary = 0;
 
     public function getName()
     {
@@ -32,8 +32,20 @@ class Worker
 
     public function setAge($age)
     {
-        $this->age = $age;
+        if ($this->checkAge($age)) {
+            $this->age = $age;
+        }
     }
+
+    private function checkAge($age)
+    {
+        if ($age > 1 && $age < 100) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function getSalary()
     {
         return $this->salary;
@@ -49,7 +61,7 @@ class Worker
 
 $user1 = new Worker;
 $user1->setName('Ivan');
-$user1->setAge(25);
+$user1->setAge(255);
 $user1->setSalary(1000);
 
 $user2 = new Worker;
