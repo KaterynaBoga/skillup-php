@@ -3,20 +3,17 @@ error_reporting(E_ALL);
 ini_set('display_errors', true);
 
 include 'lib.php';
+include  'User.php';
+include  'PremiumUser.php';
 
-$user = [
-    'first_name' => '',
-    'last_name' => '',
-    'email' => '',
-    'phone' => '',
-    'confirm' => false,
-];
+$user = new PremiumUser('Test');
+$user->firstName = 'Petya';
+
 
 $errors=[];
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $user = processRequest($user);
-    $errors = validateUser($user);
+    $errors = $user->processRequest($_POST);
 
     if (!$errors) {
         saveUser2($user);
@@ -25,4 +22,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         exit();
     }
 }
+
 include 'form.php';

@@ -1,6 +1,6 @@
 <?php
 /**
- * @var array $user
+ * @var User $user
  */
 ?>
 
@@ -31,10 +31,15 @@
     <?php } ?>
 
         <form action="index.php" method="post">Форма подписки
-            <label>Имя <input name="first_name" value="<?= $user['first_name'] ?>"></label>
-            <label>Фамилия <input name="last_name" value="<?= $user['last_name'] ?>"></label>
-            <label>E-mail <input type="email" name="email" name="email" value="<?= $user['email'] ?>"></label>
-            <label><input type="checkbox" name="confirm" value="1" <?= $user['confirm'] ? 'checked' : '' ?>>Я согласен с правилами сайта</label>
+            <label>Имя <input name="firstName" value="<?= $user->firstName ?>"></label>
+            <label>Фамилия <input name="lastName" value="<?= $user->lastName ?>"></label>
+            <label>E-mail <input type="email" name="email" name="email" value="<?= $user->email ?>"></label>
+            <label>Phone <input name="phone" value="<?=$user->phone ?>"></label>
+            <label>
+                <input type="checkbox" name="confirm" value="1"
+                    <?= $user->confirm ? 'checked' : '' ?>>
+                Я согласен с правилами сайта
+            </label>
             <button type="submit">Зарегистрировать</button>
         </form>
     </body>

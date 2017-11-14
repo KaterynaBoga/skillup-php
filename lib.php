@@ -1,6 +1,6 @@
 <?php
 
-define('USERS_FILE', __DIR__ . '/users.txt');
+define('USERS_FILE', __DIR__ . '/subscribers.txt');
 
 function processRequest(array $user) {
     foreach ( $user as $field => $value) {
@@ -31,9 +31,9 @@ function saveUser(array $user) {
     file_put_contents(USERS_FILE, $existing_users);
 }
 
-function saveUser2(array $user) {
+function saveUser2(User $user) {
     $file = fopen(USERS_FILE, 'a');
-    $user_info = implode("\t", $user) . PHP_EOL;
+    $user_info = $user . PHP_EOL;
     fputs($file, $user_info);
     fclose($file);
 }
