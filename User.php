@@ -9,24 +9,55 @@
 class Worker
 {
 
-    public $name = '';
+    private $name = '';
 
-    public $age = '';
+    private $age = '';
 
-    public $salary = '';
+    private $salary = '';
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    public function setAge($age)
+    {
+        $this->age = $age;
+    }
+    public function getSalary()
+    {
+        return $this->salary;
+    }
+
+    public function setSalary($salary)
+    {
+        $this->salary = $salary;
+    }
+
+
 }
 
 $user1 = new Worker;
-$user1->name = 'Ivan';
-$user1->age = 25;
-$user1->salary = 1000;
+$user1->setName('Ivan');
+$user1->setAge(25);
+$user1->setSalary(1000);
 
 $user2 = new Worker;
-$user2->name = 'Vasya';
-$user2->age = 26;
-$user2->salary = 2000;
+$user2->setName('Vasya');
+$user2->setAge(26);
+$user2->setSalary(2000);
 
-echo $user1->salary + $user2->salary . PHP_EOL;
-echo $user1->age + $user2->age;
 
+echo $user1->getSalary() + $user2->getSalary() . PHP_EOL;
+echo $user1->getAge() + $user2->getAge() . PHP_EOL;
 ?>
