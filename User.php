@@ -6,62 +6,27 @@
  * Time: 19:27
  */
 
-class User
+class Worker
 {
 
-    public $firstName = '';
+    public $name = '';
 
-    public $lastName = '';
+    public $age = '';
 
-    public $email = '';
-
-    public $phone = '';
-
-    public $confirm = false;
-
-    private $isProcessed = false;
-
-    public function __construct($firstName)
-    {
-        $this->firstName = $firstName;
-    }
-
-    public function processRequest(array $postData)
-    {
-
-            if ($this->isProcessed) {
-                throw new Exception('User was already processed.');
-            }
-        $this->isProcessed = true;
-
-        $errors = $this->validate($postData);
-
-        $this->firstName = isset($postData['firstName']) ? $postData['firstName'] : '';
-        $this->lastName = isset($postData['lastName']) ? $postData['lastName'] : '';
-        $this->email = isset($postData['email']) ? $postData['email'] : '';
-        $this->phone = isset($postData['phone']) ? $postData['phone'] : '';
-        $this->confirm = isset($postData['confirm']) ? $postData['confirm'] : '';
-
-        return $errors;
-    }
-    protected function validate(array $user) {
-        $errors = [];
-
-        if (empty($user['confirm'])) {
-            $errors[] = 'Вы должны принять условия!';
-        }
-        if (!$user['email']) {
-            $errors[] = 'Введите email!';
-        }
-        if ($user['phone'] && !is_numeric($user['phone'])) {
-            $errors[] = 'В номере телефона допускаются только цифры';
-        }
-
-        return $errors;
-    }
-    public function __toString()
-    {
-        return $this->firstName . "\t" .$this->lastName . "\t" . $this->email
-            . "\t" . $this->phone . "\t" . $this->confirm;// TODO: Implement __toString() method.
-    }
+    public $salary = '';
 }
+
+$user1 = new Worker;
+$user1->name = 'Ivan';
+$user1->age = 25;
+$user1->salary = 1000;
+
+$user2 = new Worker;
+$user2->name = 'Vasya';
+$user2->age = 26;
+$user2->salary = 2000;
+
+echo $user1->salary + $user2->salary . PHP_EOL;
+echo $user1->age + $user2->age;
+
+?>
