@@ -18,10 +18,6 @@ function validateUser(array $user) {
     if (!$user['email']) {
         $errors[] = 'Введите email!';
     }
-    if ($user['phone'] && !is_numeric($user['phone'])) {
-        $errors[] = 'В номере телефона допускаются только цифры';
-    }
-    return $errors;
 }
 
 function saveUser(array $user) {
