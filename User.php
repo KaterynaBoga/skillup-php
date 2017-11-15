@@ -5,37 +5,32 @@
  * Date: 14.11.2017
  * Time: 19:27
  */
+include 'Worker.php';
+include 'Student.php';
 
-class Worker
+class User
 {
 
-    private $name = '';
+    protected $name = '';
 
-    private $age = 0;
+    protected $age = 0;
 
-    private $salary = 0;
-
-    public function __construct($name, $age, $salary)
-    {
-        $this->name = $name;
-        $this->age = $age;
-        $this->salary = $salary;
-    }
     public function getName()
     {
-        return $this->name;
+        return $this->age;
     }
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
     public function getAge()
     {
         return $this->age;
     }
-    public function getSalary()
+    public function setAge($age)
     {
-        return $this->salary;
+        $this->age = $age;
     }
-
 }
 
-$user = new Worker('Коля', 25, 1000);
-echo $user->getAge() + $user->getSalary() . PHP_EOL;
-?>
