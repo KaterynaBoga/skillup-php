@@ -111,3 +111,36 @@ echo $student2->getCourse();
 echo $student2->getCash() . PHP_EOL;
 
 
+class Driver extends Worker
+{
+    private $experience;
+    private $category;
+
+    public function getExperience()
+    {
+        return $this->experience;
+    }
+
+    public function setExperience($experience)
+    {
+        $this->experience = $experience;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+}
+
+$driver = new Driver();
+$driver->setExperience(14);
+$driver->setCategory('C');
+
+
+echo $driver->getExperience() . PHP_EOL;
+echo $driver->getCategory() . PHP_EOL;
