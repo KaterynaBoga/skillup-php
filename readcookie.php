@@ -1,0 +1,1 @@
+Значение cookie age - <?= $_COOKIE['age'] ?>
