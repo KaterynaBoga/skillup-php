@@ -2,7 +2,6 @@
 if (!empty($_REQUEST['hide'])) {
     setcookie('show', 'hide', time()+3600*24*30);
 }
-
 ?>
 
 <!DOCTYPE html>
