@@ -4,13 +4,13 @@ include 'Worker.php';
 error_reporting(E_ALL);
 ini_set('display_errors', true);
 
-        function bd ($pdo){
+   /*     function bd ($pdo){
         $sql = 'SELECT * FROM workers';
         $result=$pdo->prepare($sql);
         $result->execute();
         return $result;
         }
-
+    */
 $pdo = new PDO('mysql:host=localhost;dbname=skillup;charset=utf8','root','');
         echo 'Выбрать работника с id = 3';
         $sql = 'SELECT * FROM workers WHERE id = :id';
@@ -140,7 +140,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=skillup;charset=utf8','root','');
             var_dump($row);
         }
 
-        echo 'Добавьте нового работника Никиту, 26 лет, зарплата 300$';
+/*        echo 'Добавьте нового работника Никиту, 26 лет, зарплата 300$';
         $sql = 'INSERT INTO workers SET name = :name, age =:age, salary = :salary';
         $result = $pdo->prepare($sql);
         $result->execute(['name' => 'Nikita', 'age' => 26, 'salary' => 300]);
@@ -202,12 +202,36 @@ $pdo = new PDO('mysql:host=localhost;dbname=skillup;charset=utf8','root','');
         while ($row = $result->fetchObject(Worker::class)) {
             var_dump($row);
         }
+*/
 
-        echo 'Поставьте Васе зарплату в 200$.';
-        $sql = 'UPDATE workers SET salary = :salary  WHERE name = :name';
+        echo 'Работнику с id=4 поставьте возраст 35 лет.';
+        $sql = 'UPDATE workers SET age = :age  WHERE id = :id';
         $result = $pdo->prepare($sql);
-        $result->execute(['salary' => 200, 'name' => 'Vasya']);
-        $result = bd($pdo);
+        $result->execute(['age' => 35, 'id' => 4]);
+        while ($row = $result->fetchObject(Worker::class)) {
+            var_dump($row);
+        }
+
+        echo 'Всем, у кого зарплата 500$ сделайте ее 700$.';
+        $sql = 'UPDATE workers SET salary = :salary700  WHERE salary = :salary500';
+        $result = $pdo->prepare($sql);
+        $result->execute(['salary700' => 700, 'salary500' => 500]);
+        while ($row = $result->fetchObject(Worker::class)) {
+            var_dump($row);
+        }
+
+        echo 'Работникам с id больше 2 и меньше 5 включительно поставьте возраст 23';
+        $sql = 'UPDATE workers SET age = :age WHERE id > :id1 AND id <= :id2';
+        $result = $pdo->prepare($sql);
+        $result->execute(['age' => 23, 'id1' => 2, 'id2' => 5]);
+        while ($row = $result->fetchObject(Worker::class)) {
+            var_dump($row);
+        }
+
+        echo 'Поменяйте Васю на Женю и прибавьте ему зарплату до 900$';
+        $sql = 'UPDATE workers SET name = :name, salary = :salary WHERE name = :name1';
+        $result = $pdo->prepare($sql);
+        $result->execute(['name' => 'Evgen', 'salary' => 900, 'name' => 'Vasya']);
         while ($row = $result->fetchObject(Worker::class)) {
             var_dump($row);
         }
